@@ -1,30 +1,25 @@
-import utils
+# This is all boilerplate, don't touch this file for now!
 import sys
+import os
+from django.conf import settings
+from django.core.management import execute_from_command_line
 
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
+settings.configure(
+    DEBUG=True,
+    ROOT_URLCONF='urls',
+    STATIC_URL='static/',
+    STATIC_ROOT=os.path.join(BASE_DIR, 'static'),
+    INSTALLED_APPS=[
+        'django.contrib.staticfiles',
+    ],
+    TEMPLATES=[{
+        'BACKEND': 'django.template.backends.django.DjangoTemplates',
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
+    }],
+)
 
-#run--------------    
-if __name__ == "__main__":   
-    print("This is argv:", sys.argv)
-    if len(sys.argv) > 1:
-        command = sys.argv[1]
-        if command == "build":
-            print("Build was specified")
-            utils.build()
-            print("Your content pages are now templated into your website design")
-        elif command == "new":
-            print("New page was specified")
-            utils.new()
-            print("A new content page has been created at content/new.html")
-        else:
-            print("Usage:")
-            print("  To rebuild site: python manage.py build")
-            print("  To create new page: python manage.py new")
-    else:
-        print("Usage:")
-        print("  To rebuild site: python manage.py build")
-        print("  To create new page: python manage.py new") #DRY... :/
-
-    
+execute_from_command_line(sys.argv)
     
 
