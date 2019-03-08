@@ -2,28 +2,26 @@ import requests
 from django.http import HttpResponse
 from django.shortcuts import render
 
+#if i was going to autogenerate the list of pages, where would that code go?
+
 def index(request):
-    index= open("templates/index.html").read()
     context = {
-        'content': index,
     }
     print("at the index")
-    return render(request, 'base.html' , context)
+    return render(request, 'index.html' , context)
 
 
 def about(request):
-    about = open("templates/about.html").read()
     context = {
-        'content': about, 
     }
-    return render(request, 'headerfooter.html', context)
+    print("at the about page")
+    return render(request, 'about.html', context)
 
 def gallery(request):
-    gallery = open("templates/gallery.html").read()
     context = {
-        'content': gallery,
     }
-    return render(request, 'headerfooter.html' , context) #need to extend with base
+    print("at the gallery page")
+    return render(request, 'gallery.html' , context)
 
 def github_api_example(request):
     # We can also combine Django with APIs

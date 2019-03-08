@@ -1,4 +1,5 @@
-
+{% extends "base.html" %}
+{% block content %}
     <!-- Gradient Background Overlay -->
     <div class="gradient-background-overlay"></div>
 
@@ -12,24 +13,8 @@
                             <!-- Logo Area  -->
                             <a class="navbar-brand title other-title" href="index.html">Oakland Mosaic Trash Can Project</a>
 
-                            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#studioMenu" aria-controls="studioMenu" aria-expanded="false" aria-label="Toggle navigation"><i class="fa fa-bars"></i> Menu</button>
-
-                            <div class="collapse navbar-collapse" id="studioMenu">
-                                <!-- Menu Area Start  -->
-                                <ul class="navbar-nav ml-auto">
-                                   {{menu}}
-                                </ul>
-                                <!-- Menu Area End  -->
-                            </div>
-                        </nav>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </header>
-    <!-- Header Area End -->
-
-{{content|safe}}
+{% block page %}
+{% endblock page %}
 
     <!-- Footer Area Start -->
     <footer class="footer-area">
@@ -49,3 +34,4 @@
         </div>
     </footer>
     <!-- Footer Area End -->
+{% endblock content %}
