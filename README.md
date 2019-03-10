@@ -1,5 +1,3 @@
 # Oakland Mosaic Trash Cans Site
 
- build.py to assemble website pages
- 
-changed
+python manage.py runserver
