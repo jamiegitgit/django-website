@@ -1,0 +1,70 @@
+{% extends 'headerfooter.html' %}
+{% block page %}
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#studioMenu" aria-controls="studioMenu" aria-expanded="false" aria-label="Toggle navigation"><i class="fa fa-bars"></i> Menu</button>
+
+                            <div class="collapse navbar-collapse" id="studioMenu">
+                                <!-- Menu Area Start  -->
+                                <ul class="navbar-nav ml-auto">
+                                    <li class="nav-item">
+	                                    <a class="nav-link" href="/">Home</a>
+                                    </li>
+                                    <li class="nav-item">
+	                                    <a class="nav-link" href="about">About</a>
+                                    </li>
+                                    <li class="nav-item">
+	                                    <a class="nav-link" href="gallery">Gallery</a>
+                                    </li>
+                                    <li class="nav-item">
+	                                    <a class="nav-link current" href="contribute">Contribute</a>
+                                    </li>
+                                </ul>
+                                </ul>
+                                <!-- Menu Area End  -->
+                            </div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- Header Area End -->
+
+    <section class="contact-area section_padding_100 mt-100">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-10">
+                    <div class="contact-heading-text text-center mb-100">
+                        <span></span>
+                        <h2>Contribute to this Website</h2>
+                        <p>Do you have photos or information about the trash cans? Send your information we will add it to this website! </p>
+                    </div>
+                </div>
+                <!-- Contact Form Area -->
+                <div class="col-10">
+                    <div class="contact-form-area">
+                        <form action="/contribute" method="POST" enctype="multipart/form-data">
+                            <div class="row">
+                                <div class="col-12 col-md-4">
+                                    <input type="text" class="form-control" name="name" id="name" placeholder="Your Name">
+                                </div>
+                                <div class="col-12 col-md-4">
+                                    <input type="email" class="form-control" name="email" id="email" placeholder="Your Email">
+                                </div>
+                                <div class="col-12 col-md-4">
+                                    <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject">
+                                </div>
+                                <div class="col-12">
+                                    <textarea name="message" class="form-control" id="message" cols="30" rows="10" placeholder="Message"></textarea>
+                                </div>
+                                <div class="col-12 text-center">
+                                    <button type="submit" class="btn studio-btn mt-3"><img src="../static/img/core-img/logo-icon.png" alt=""> Send</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock page %}
+
